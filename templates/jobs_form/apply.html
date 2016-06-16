@@ -1,3 +1,4 @@
+{% extends "jobs_form/base.html" %}
 {% load i18n %}
 
 {% block head %}
@@ -5,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+
     <p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</p>
     <form action="" method="post">
         {% csrf_token %}

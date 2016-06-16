@@ -5,6 +5,7 @@ YES_NO_CHOICES = [('Yes', 'Yes'), ('No', 'No')]
 SALARY_FORMAT_CHOICES = [(c,c) for c in ['Hourly', 'Weekly', 'Bi-weekly', 'Monthly', 'Year',]]
 EDUCATION_TYPE_CHOICES = [(c, c) for c in ['Diploma', 'Degree', 'Other']]
 
+
 class PersonalInfoForm(forms.Form):
     position_name = forms.CharField(label='*Position Name and Number You are Applying For')
     first_name = forms.CharField(label='*First Name')
@@ -47,37 +48,19 @@ class PersonalInfoForm(forms.Form):
 
 
 class EducationForm(forms.Form):
-    institution_name = forms.CharField(label='*Name of Educational Institution #1')
-    major = forms.CharField(label='*Major')
-    number_of_year = forms.IntegerField(label='*Number of Years')
-    type = forms.ChoiceField(
-        label='*Type',
-        widget = widgets.RadioSelect,
-        choices=EDUCATION_TYPE_CHOICES
-    )
-    other_type = forms.CharField(label='If other, describe')
+    def __init__(self, *args, **kwargs):
+        super(EducationForm, self).__init__(*args, **kwargs)
+        for i in range(1,4):
+            self.fields['institution_name_%d' % i] = forms.CharField(label='*Name of Educational Institution #%d' % i)
+            self.fields['major_%d' % i] = forms.CharField(label='*Major')
+            self.fields['number_of_year_%d' % i] = forms.IntegerField(label='*Number of Years')
+            self.fields['type_%d' % i] = forms.ChoiceField(
+                label='*Type',
+                widget = widgets.RadioSelect,
+                choices=EDUCATION_TYPE_CHOICES
+            )
+            self.fields['other_type_%d' % i] = forms.CharField(label='If other, describe')
 
-    institution_name2 = forms.CharField(label='*Name of Educational Institution #2', required=False)
-    major2 = forms.CharField(label='*Major', required=False)
-    number_of_year2 = forms.IntegerField(label='*Number of Years', required=False)
-    type2 = forms.ChoiceField(
-        label='*Type',
-        widget=widgets.RadioSelect,
-        choices=EDUCATION_TYPE_CHOICES,
-        required=False
-    )
-    other_type2 = forms.CharField(label='If other, describe', required=False)
-
-    institution_name3 = forms.CharField(label='*Name of Educational Institution #3', required=False)
-    major3 = forms.CharField(label='*Major', required=False)
-    number_of_year3 = forms.IntegerField(label='*Number of Years', required=False)
-    type3 = forms.ChoiceField(
-        label='*Type',
-        widget=widgets.RadioSelect,
-        choices=EDUCATION_TYPE_CHOICES,
-        required=False
-    )
-    other_type3 = forms.CharField(label='If other, describe', required=False)
 
 
 class EmploymentHistoryForm(forms.Form):
@@ -103,16 +86,20 @@ class EmploymentHistoryForm(forms.Form):
 
 
 class ProfessionalLicenseForm(forms.Form):
-    license = forms.CharField(label='License/Certification', required=False)
-    state = forms.CharField(label='State', required=False)
-    license_number = forms.CharField(label='License Number')
-    date_expires = forms.DateField(label='Date Expires', widget=forms.widgets.SelectDateWidget)
+    def __init__(self, *args, **kwargs):
+        super(ProfessionalLicenseForm, self).__init__(*args, **kwargs)
+        for i in range(1,4):
+            self.fields['license_%d' % i] = forms.CharField(label='License/Certification', required=False)
+            self.fields['state_%d' % i] = forms.CharField(label='State', required=False)
+            self.fields['license_number_%d' % i] = forms.CharField(label='License Number', required=False)
+            self.fields['expire_date_%d' % i] = forms.DateField(
+                label='Date Expires',
+                widget=forms.widgets.SelectDateWidget,
+                required=False
+            )
 
 
 class ProfessionalReferenceForm(forms.Form):
-    reference = forms.CharField(label='Reference')
-    current_position = forms.CharField(label='Current Position and Company')
-    phone_number = forms.CharField(label='Phone Number')
     eligible_for_employment_in_us = forms.ChoiceField(
         label='*Are you legally eligible for employment in the United States of America?',
         choices=YES_NO_CHOICES,
@@ -123,6 +110,13 @@ class ProfessionalReferenceForm(forms.Form):
         choices=YES_NO_CHOICES,
         widget=forms.widgets.RadioSelect
     )
+
+    def __init__(self, *args, **kwargs):
+        super(ProfessionalReferenceForm, self).__init__(*args, *kwargs)
+        for i in range(1,4):
+            self.fields['reference_%d' % i] = forms.CharField(label='Reference #%d' % i, required=False)
+            self.fields['current_position_%d' % i] = forms.CharField(label='Current Position and Company', required=False)
+            self.fields['phone_number_%d' % i] = forms.CharField(label='Phone Number', required=False)
 
 
 class CertificationAndRelease(forms.Form):
