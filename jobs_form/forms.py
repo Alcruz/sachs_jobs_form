@@ -68,7 +68,7 @@ class EducationForm(forms.Form):
     )
     other_type2 = forms.CharField(label='If other, describe', required=False)
 
-    institution_name3 = forms.CharField(label='*Name of Educational Institution #1', required=False)
+    institution_name3 = forms.CharField(label='*Name of Educational Institution #3', required=False)
     major3 = forms.CharField(label='*Major', required=False)
     number_of_year3 = forms.IntegerField(label='*Number of Years', required=False)
     type3 = forms.ChoiceField(
@@ -79,3 +79,55 @@ class EducationForm(forms.Form):
     )
     other_type3 = forms.CharField(label='If other, describe', required=False)
 
+
+class EmploymentHistoryForm(forms.Form):
+    company_name = forms.CharField(label='*Company Name #1')
+    employer_phone_number = forms.CharField(label="*Employer's Phone Number")
+    address_street = forms.CharField(label='Street Address')
+    address_street_line2 = forms.CharField(label='Address line 2')
+    city = forms.CharField(label='City')
+    state = forms.CharField(label='State')
+    country = forms.CharField(label='Country')
+    job_title = forms.CharField(label='*Job Title')
+    employed_from = forms.DateField(label='*Employed From', widget=forms.widgets.SelectDateWidget)
+    employed_to = forms.DateField(label='*To', widget=forms.widgets.SelectDateWidget)
+    starting_salary = forms.DecimalField(label='*Starting Salary')
+    ending_salary = forms.DecimalField(label='*Ending Salary')
+    starting_salary = forms.CharField(label="*Supervisor's Name")
+    contact_employer = forms.ChoiceField(
+        label='*Can we contact this employer?',
+        choices=YES_NO_CHOICES,
+        widget=forms.RadioSelect
+    )
+    job_duties = forms.CharField(label='Job Duties', widget=forms.widgets.Textarea)
+
+
+class ProfessionalLicenseForm(forms.Form):
+    license = forms.CharField(label='License/Certification', required=False)
+    state = forms.CharField(label='State', required=False)
+    license_number = forms.CharField(label='License Number')
+    date_expires = forms.DateField(label='Date Expires', widget=forms.widgets.SelectDateWidget)
+
+
+class ProfessionalReferenceForm(forms.Form):
+    reference = forms.CharField(label='Reference')
+    current_position = forms.CharField(label='Current Position and Company')
+    phone_number = forms.CharField(label='Phone Number')
+    eligible_for_employment_in_us = forms.ChoiceField(
+        label='*Are you legally eligible for employment in the United States of America?',
+        choices=YES_NO_CHOICES,
+        widget=forms.widgets.RadioSelect
+    )
+    supporting_documentation = forms.ChoiceField(
+        label='*If so, are you able to furnish supporting documentation',
+        choices=YES_NO_CHOICES,
+        widget=forms.widgets.RadioSelect
+    )
+
+
+class CertificationAndRelease(forms.Form):
+    signature = forms.CharField(label='*Signature (Enter your full name)')
+    date = forms.DateTimeField(
+        label="*Enter Today's Date and Time of Signature",
+        widget=forms.widgets.SplitDateTimeWidget
+    )
