@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap3',
-    'jobs_form'
+    'django_countries',
+    'jobs_form',
 ]
 
 MIDDLEWARE_CLASSES = [

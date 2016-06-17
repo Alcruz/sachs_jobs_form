@@ -1,9 +1,35 @@
 from django import forms
 from django.forms import widgets
 
+from django_countries.fields import countries, LazyTypedChoiceField
+from django_countries.widgets import CountrySelectWidget
+
 YES_NO_CHOICES = [('Yes', 'Yes'), ('No', 'No')]
 SALARY_FORMAT_CHOICES = [(c,c) for c in ['Hourly', 'Weekly', 'Bi-weekly', 'Monthly', 'Year',]]
 EDUCATION_TYPE_CHOICES = [(c, c) for c in ['Diploma', 'Degree', 'Other']]
+
+CERTIFICATION_AND_REALEASE_TEXT = "I authorize SACHS to verify, in any manner, all statements made by me. SACHS may," \
+                                  " for example, interview former employers, schools, references, or others and request" \
+                                  " information and supporting documentation such as transcripts and evaluations. " \
+                                  "I authorize any and all former employers, references, or educational institutions " \
+                                  "to release all information relevant to my employment or education to SACHS, " \
+                                  "without giving me prior notice. If employed by SACHS, I agree to comply with all " \
+                                  "policies and procedures, safety rules, and cooperate in any reasonable security " \
+                                  "investigation. I understand that I am not employed by or entitled to employment by " \
+                                  "SACHS unless and until I have received and accepted a written offer of employment " \
+                                  "from a Company representative. I also understand that no other act of SACHS, " \
+                                  "including the acceptance of my application for employment, the scheduling of " \
+                                  "interviews with me, or any oral or written statements of interest or encouragement, " \
+                                  "creates an employment relationship with me, and I will not rely on any such act of " \
+                                  "SACHS. I understand that if I am employed by SACHS, such employment is “at-will,” " \
+                                  "which means that my employment and related compensation may be terminated at any " \
+                                  "time, with or without cause, and with or without advance notice by me or SACHS. " \
+                                  "I certify that the information I have provided in this employment application, " \
+                                  "my resume, any supplementary materials submitted by me is accurate and has been " \
+                                  "completed to the best of my knowledge and ability. " \
+                                  "I understand that any falsification, misrepresentation or omission in my " \
+                                  "interviews or any other employment record, will be sufficient reason to deny " \
+                                  "employment and/or may be reason for future dismissal."
 
 
 class PersonalInfoForm(forms.Form):
@@ -25,7 +51,11 @@ class PersonalInfoForm(forms.Form):
     city = forms.CharField(label='City')
     state = forms.CharField(label='State')
     zip_code = forms.CharField(label='Postal/Zip Code')
-    country = forms.ComboField(label='Country')
+    country = LazyTypedChoiceField(
+        label='Country',
+        choices=countries,
+        widget=CountrySelectWidget()
+    )
     hear_about_this_job = forms.CharField(label='*How did you hear about this job?')
     referred_by_employee = forms.ChoiceField(
         label='Were you referred by an employee?',
@@ -50,27 +80,43 @@ class PersonalInfoForm(forms.Form):
 class EducationForm(forms.Form):
     def __init__(self, *args, **kwargs):
         super(EducationForm, self).__init__(*args, **kwargs)
-        for i in range(1,4):
-            self.fields['institution_name_%d' % i] = forms.CharField(label='*Name of Educational Institution #%d' % i)
-            self.fields['major_%d' % i] = forms.CharField(label='*Major')
-            self.fields['number_of_year_%d' % i] = forms.IntegerField(label='*Number of Years')
-            self.fields['type_%d' % i] = forms.ChoiceField(
-                label='*Type',
-                widget = widgets.RadioSelect,
-                choices=EDUCATION_TYPE_CHOICES
-            )
-            self.fields['other_type_%d' % i] = forms.CharField(label='If other, describe')
+        self._create_form(1, required=True, star='*')
+        for i in range(2,4):
+            self._create_form(i)
 
+    def _create_form(self, i, required=False, star=''):
+        self.fields['institution_name_%d' % i] = forms.CharField(
+            label=star+'Name of Educational Institution #%d' % i,
+            required=required
+        )
+        self.fields['major_%d' % i] = forms.CharField(
+            label=star+'Major',
+            required=required
+        )
+        self.fields['number_of_year_%d' % i] = forms.IntegerField(
+            label=star+'Number of Years',
+            required=required
+        )
+        self.fields['type_%d' % i] = forms.ChoiceField(
+            label=star+'Type',
+            widget=widgets.RadioSelect,
+            choices=EDUCATION_TYPE_CHOICES,
+            required=required
+        )
+        self.fields['other_type_%d' % i] = forms.CharField(
+            label='If other, describe',
+            required=required
+        )
 
 
 class EmploymentHistoryForm(forms.Form):
-    company_name = forms.CharField(label='*Company Name #1')
+    company_name = forms.CharField(label='*Company Name')
     employer_phone_number = forms.CharField(label="*Employer's Phone Number")
     address_street = forms.CharField(label='Street Address')
     address_street_line2 = forms.CharField(label='Address line 2')
     city = forms.CharField(label='City')
     state = forms.CharField(label='State')
-    country = forms.CharField(label='Country')
+    country = LazyTypedChoiceField(label='Country', choices=countries)
     job_title = forms.CharField(label='*Job Title')
     employed_from = forms.DateField(label='*Employed From', widget=forms.widgets.SelectDateWidget)
     employed_to = forms.DateField(label='*To', widget=forms.widgets.SelectDateWidget)
@@ -89,14 +135,17 @@ class ProfessionalLicenseForm(forms.Form):
     def __init__(self, *args, **kwargs):
         super(ProfessionalLicenseForm, self).__init__(*args, **kwargs)
         for i in range(1,4):
-            self.fields['license_%d' % i] = forms.CharField(label='License/Certification', required=False)
-            self.fields['state_%d' % i] = forms.CharField(label='State', required=False)
-            self.fields['license_number_%d' % i] = forms.CharField(label='License Number', required=False)
-            self.fields['expire_date_%d' % i] = forms.DateField(
-                label='Date Expires',
-                widget=forms.widgets.SelectDateWidget,
-                required=False
-            )
+            self._create_form(i)
+
+    def _create_form(self, i, required=False):
+        self.fields['license_%d' % i] = forms.CharField(label='License/Certification', required=required)
+        self.fields['state_%d' % i] = forms.CharField(label='State', required=required)
+        self.fields['license_number_%d' % i] = forms.CharField(label='License Number', required=required)
+        self.fields['expire_date_%d' % i] = forms.DateField(
+            label='Date Expires',
+            widget=forms.widgets.SelectDateWidget,
+            required=required
+        )
 
 
 class ProfessionalReferenceForm(forms.Form):
@@ -105,6 +154,7 @@ class ProfessionalReferenceForm(forms.Form):
         choices=YES_NO_CHOICES,
         widget=forms.widgets.RadioSelect
     )
+
     supporting_documentation = forms.ChoiceField(
         label='*If so, are you able to furnish supporting documentation',
         choices=YES_NO_CHOICES,
@@ -112,16 +162,38 @@ class ProfessionalReferenceForm(forms.Form):
     )
 
     def __init__(self, *args, **kwargs):
-        super(ProfessionalReferenceForm, self).__init__(*args, *kwargs)
-        for i in range(1,4):
-            self.fields['reference_%d' % i] = forms.CharField(label='Reference #%d' % i, required=False)
-            self.fields['current_position_%d' % i] = forms.CharField(label='Current Position and Company', required=False)
-            self.fields['phone_number_%d' % i] = forms.CharField(label='Phone Number', required=False)
+        super(ProfessionalReferenceForm, self).__init__(*args, **kwargs)
+
+        for i in range(1, 4):
+            self._create_form(i)
+
+    def _create_form(self, i, required=False):
+        self.fields['reference_%d' % i] = forms.CharField(
+            label='Reference #%d' % i,
+            required=required
+        )
+
+        self.fields['current_position_%d' % i] = forms.CharField(
+            label='Current Position and Company',
+            required=required
+        )
+
+        self.fields['phone_number_%d' % i] = forms.CharField(
+            label='Phone Number',
+            required=required
+        )
 
 
 class CertificationAndRelease(forms.Form):
+    certification_and_release = forms.CharField(
+        label='Certification and Release',
+        widget=widgets.Textarea(attrs={'readonly':'readonly'}),
+        initial=CERTIFICATION_AND_REALEASE_TEXT
+    )
+
     signature = forms.CharField(label='*Signature (Enter your full name)')
+
     date = forms.DateTimeField(
         label="*Enter Today's Date and Time of Signature",
-        widget=forms.widgets.SplitDateTimeWidget
+        widget=widgets.SelectDateWidget
     )
