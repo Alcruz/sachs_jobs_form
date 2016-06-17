@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap3',
     'django_countries',
+    'datetimewidget',
     'jobs_form',
 ]
 

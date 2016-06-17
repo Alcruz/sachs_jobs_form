@@ -4,6 +4,8 @@ from django.forms import widgets
 from django_countries.fields import countries, LazyTypedChoiceField
 from django_countries.widgets import CountrySelectWidget
 
+from datetimewidget.widgets import DateTimeWidget, DateWidget
+
 YES_NO_CHOICES = [('Yes', 'Yes'), ('No', 'No')]
 SALARY_FORMAT_CHOICES = [(c,c) for c in ['Hourly', 'Weekly', 'Bi-weekly', 'Monthly', 'Year',]]
 EDUCATION_TYPE_CHOICES = [(c, c) for c in ['Diploma', 'Degree', 'Other']]
@@ -63,7 +65,10 @@ class PersonalInfoForm(forms.Form):
         choices=YES_NO_CHOICES
     )
     employee_name = forms.CharField(label='If yes, list name(s)', required=False)
-    day_available_for_work = forms.DateField(label='*Day available for work')
+    day_available_for_work = forms.DateField(
+        label='*Day available for work',
+        widget=DateWidget(bootstrap_version=3, options={'pickerPosition': 'bottom-left'})
+    )
     salary_required = forms.DecimalField(label='*Salary required')
     salary_format = forms.ChoiceField(
         label='*Please select a format',
@@ -118,8 +123,14 @@ class EmploymentHistoryForm(forms.Form):
     state = forms.CharField(label='State')
     country = LazyTypedChoiceField(label='Country', choices=countries)
     job_title = forms.CharField(label='*Job Title')
-    employed_from = forms.DateField(label='*Employed From', widget=forms.widgets.SelectDateWidget)
-    employed_to = forms.DateField(label='*To', widget=forms.widgets.SelectDateWidget)
+    employed_from = forms.DateField(
+        label='*Employed From',
+        widget=DateWidget(bootstrap_version=3, options={'pickerPosition': 'bottom-left'})
+    )
+    employed_to = forms.DateField(
+        label='*To',
+        widget=DateWidget(bootstrap_version=3, options={'pickerPosition': 'bottom-left'})
+    )
     starting_salary = forms.DecimalField(label='*Starting Salary')
     ending_salary = forms.DecimalField(label='*Ending Salary')
     starting_salary = forms.CharField(label="*Supervisor's Name")
@@ -143,7 +154,7 @@ class ProfessionalLicenseForm(forms.Form):
         self.fields['license_number_%d' % i] = forms.CharField(label='License Number', required=required)
         self.fields['expire_date_%d' % i] = forms.DateField(
             label='Date Expires',
-            widget=forms.widgets.SelectDateWidget,
+            widget=DateWidget(bootstrap_version=3, options={'pickerPosition': 'bottom-left'}),
             required=required
         )
 
@@ -195,5 +206,5 @@ class CertificationAndRelease(forms.Form):
 
     date = forms.DateTimeField(
         label="*Enter Today's Date and Time of Signature",
-        widget=widgets.SelectDateWidget
+        widget=DateTimeWidget(bootstrap_version=3, options={'pickerPosition': 'bottom-left'})
     )

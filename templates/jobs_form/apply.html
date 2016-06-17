@@ -3,10 +3,6 @@
 {% load bootstrap3 %}
 {% load i18n %}
 
-{% block head %}
-    {{ wizard.form.media }}
-{% endblock %}
-
 {% block content %}
     <p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</p>
     <form clas="form" action="" method="post">

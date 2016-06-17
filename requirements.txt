@@ -2,7 +2,9 @@ dj-database-url==0.4.1
 Django==1.9.7
 django-bootstrap3==7.0.1
 django-countries==3.4.1
+django-datetime-widget==0.9.3
 django-formtools==1.0
 gunicorn==19.6.0
 psycopg2==2.6.1
+pytz==2016.4
 whitenoise==3.2
