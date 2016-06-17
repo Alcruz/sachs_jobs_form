@@ -192,3 +192,7 @@ BOOTSTRAP3 = {
         'inline': 'bootstrap3.renderers.InlineFieldRenderer',
     },
 }
+
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
