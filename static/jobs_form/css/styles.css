@@ -1,0 +1,46 @@
+body {
+    background: rgb(255, 249, 247);
+}
+
+header {
+    background: rgba(241, 219, 211, 1);
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-bottom: 1px solid;
+    box-shadow: 2px 2px 2px #ccc;
+}
+
+.form-container {
+    font-family: 'Open Sans', 'Heveltica';
+    border: 1px solid #000;
+    border-radius: 6px;
+    padding: 30px 70px;
+    color: rgb(126, 107, 99);
+    background: white;
+    margin-bottom: 40px;
+}
+
+.form-container h1,
+.form-container h2,
+.form-container h3 {
+    color: rgb(116, 38, 44);
+}
+
+.form-container label,
+.form-container h4,
+.form-container h5,
+.form-container h6 {
+    font-weight: 400;
+}
+
+.form-container button.btn.btn-primary {
+    background: rgb(151, 49, 55);
+    border-color: rgb(116, 38, 44);
+}
+
+.form-container button.btn.btn-primary:hover {
+    background: rgb(128, 42, 47);
+    border-color: rgb(116, 38, 44);
+}
+
+

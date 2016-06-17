@@ -12,8 +12,8 @@ class PersonalInfoForm(forms.Form):
     middle_name = forms.CharField(label='M.I.', required=False)
     last_name = forms.CharField(label='*Last Name')
     phone_number = forms.CharField(label='*Phone Number')
-    resume_file = forms.FileField(label='*Upload Your Resume')
-    cover_letter_file = forms.FileField(label="*Upload Your Cover Letter/Letter of Interest")
+    resume_file = forms.FileField(label='*Upload Your Resume', required=False)
+    cover_letter_file = forms.FileField(label="*Upload Your Cover Letter/Letter of Interest", required=False)
     have_worked_under_another_name = forms.ChoiceField(
         label='*Have you ever worked under another name?',
         widget=widgets.RadioSelect,

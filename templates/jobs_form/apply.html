@@ -1,4 +1,6 @@
 {% extends "jobs_form/base.html" %}
+
+{% load bootstrap3 %}
 {% load i18n %}
 
 {% block head %}
@@ -6,27 +8,22 @@
 {% endblock %}
 
 {% block content %}
-
     <p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</p>
-    <form action="" method="post">
+    <form clas="form" action="" method="post">
         {% csrf_token %}
-        <table>
-            {{ wizard.management_form }}
-            {% if wizard.form.forms %}
-                {{ wizard.form.management_form }}
-                {% for form in wizard.form.forms %}
-                    {{ form }}
-                {% endfor %}
-            {% else %}
-                {{ wizard.form }}
-            {% endif %}
-        </table>
-        {% if wizard.steps.prev %}
-            <button name="wizard_goto_step" type="submit"
-                    value="{{ wizard.steps.first }}">{% trans "first step" %}</button>
-            <button name="wizard_goto_step" type="submit"
-                    value="{{ wizard.steps.prev }}">{% trans "prev step" %}</button>
+        {{ wizard.management_form }}
+        {% if wizard.form.forms %}
+            {{ wizard.form.management_form }}
+            {% for form in wizard.form.forms %}
+                {%  bootstrap_form form %}
+            {% endfor %}
+        {% else %}
+            {% bootstrap_form wizard.form %}
         {% endif %}
-        <input type="submit" value="{% trans "submit" %}"/>
+        {% if wizard.steps.prev %}
+             {% bootstrap_button 'First step' name="wizard_goto_step" button_type='submit' value=wizard.steps.first  %}
+            {%  bootstrap_button 'Prev'  name="wizard_goto_step" button_type='submit' value=wizard.steps.prev %}
+        {% endif %}
+        {% bootstrap_button 'Next' button_type='submit' %}
     </form>
 {% endblock %}
