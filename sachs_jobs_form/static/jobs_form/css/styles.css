@@ -10,11 +10,22 @@ header {
     box-shadow: 2px 2px 2px #ccc;
 }
 
+@media (min-device-width: 769px) {
+    .form-container {
+        padding: 30px 70px;
+    }
+}
+
+@media (max-device-width: 768px) {
+    .form-container {
+        padding: 10px 10px;
+    }
+}
+
 .form-container {
     font-family: 'Open Sans', 'Heveltica';
     border: 1px solid #000;
     border-radius: 6px;
-    padding: 30px 70px;
     color: rgb(126, 107, 99);
     background: white;
     margin-bottom: 40px;
