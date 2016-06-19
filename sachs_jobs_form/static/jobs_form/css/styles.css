@@ -43,4 +43,10 @@ header {
     border-color: rgb(116, 38, 44);
 }
 
+.datepicker .day.active,
+.datepicker .year.active,
+.datepicker .month.active {
+    background: rgb(151, 49, 55) !important;
+}
+
 

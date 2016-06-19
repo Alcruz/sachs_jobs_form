@@ -4,8 +4,6 @@ from django.forms import widgets
 from django_countries.fields import countries, LazyTypedChoiceField
 from django_countries.widgets import CountrySelectWidget
 
-from datetimewidget.widgets import DateTimeWidget, DateWidget
-
 YES_NO_CHOICES = [('Yes', 'Yes'), ('No', 'No')]
 SALARY_FORMAT_CHOICES = [(c,c) for c in ['Hourly', 'Weekly', 'Bi-weekly', 'Monthly', 'Year',]]
 EDUCATION_TYPE_CHOICES = [(c, c) for c in ['Diploma', 'Degree', 'Other']]
@@ -67,7 +65,11 @@ class PersonalInfoForm(forms.Form):
     employee_name = forms.CharField(label='If yes, list name(s)', required=False)
     day_available_for_work = forms.DateField(
         label='*Day available for work',
-        widget=DateWidget(bootstrap_version=3, options={'pickerPosition': 'bottom-left'})
+        widget=forms.DateInput(
+            attrs={
+                'class': 'date',
+            }
+        )
     )
     salary_required = forms.DecimalField(label='*Salary required')
     salary_format = forms.ChoiceField(
@@ -125,11 +127,19 @@ class EmploymentHistoryForm(forms.Form):
     job_title = forms.CharField(label='*Job Title')
     employed_from = forms.DateField(
         label='*Employed From',
-        widget=DateWidget(bootstrap_version=3, options={'pickerPosition': 'bottom-left'})
+        widget=forms.DateInput(
+            attrs={
+                'class': 'date',
+            }
+        )
     )
     employed_to = forms.DateField(
         label='*To',
-        widget=DateWidget(bootstrap_version=3, options={'pickerPosition': 'bottom-left'})
+        widget=forms.DateInput(
+            attrs={
+                'class': 'date',
+            }
+        )
     )
     starting_salary = forms.DecimalField(label='*Starting Salary')
     ending_salary = forms.DecimalField(label='*Ending Salary')
@@ -154,7 +164,11 @@ class ProfessionalLicenseForm(forms.Form):
         self.fields['license_number_%d' % i] = forms.CharField(label='License Number', required=required)
         self.fields['expire_date_%d' % i] = forms.DateField(
             label='Date Expires',
-            widget=DateWidget(bootstrap_version=3, options={'pickerPosition': 'bottom-left'}),
+            widget=forms.DateInput(
+                attrs={
+                    'class': 'date',
+                }
+            ),
             required=required
         )
 
@@ -206,5 +220,9 @@ class CertificationAndRelease(forms.Form):
 
     date = forms.DateTimeField(
         label="*Enter Today's Date and Time of Signature",
-        widget=DateTimeWidget(bootstrap_version=3, options={'pickerPosition': 'bottom-left'})
+        widget=forms.DateInput(
+            attrs={
+                'class': 'datetime',
+            }
+        )
     )
