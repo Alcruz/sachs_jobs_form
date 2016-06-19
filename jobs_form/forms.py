@@ -33,36 +33,87 @@ CERTIFICATION_AND_REALEASE_TEXT = "I authorize SACHS to verify, in any manner, a
 
 
 class PersonalInfoForm(forms.Form):
-    position_name = forms.CharField(label='*Position Name and Number You are Applying For')
-    first_name = forms.CharField(label='*First Name')
-    middle_name = forms.CharField(label='M.I.', required=False)
-    last_name = forms.CharField(label='*Last Name')
-    phone_number = forms.CharField(label='*Phone Number')
-    resume_file = forms.FileField(label='*Upload Your Resume', required=False)
-    cover_letter_file = forms.FileField(label="*Upload Your Cover Letter/Letter of Interest", required=False)
+
+    position_name = forms.CharField(
+        label='*Position Name and Number You are Applying For'
+    )
+
+    first_name = forms.CharField(
+        label='*First Name'
+    )
+
+    middle_name = forms.CharField(
+        label='M.I.', required=False
+    )
+
+    last_name = forms.CharField(
+        label='*Last Name'
+    )
+
+    phone_number = forms.CharField(
+        label='*Phone Number'
+    )
+
+    resume_file = forms.FileField(
+        label='*Upload Your Resume',
+    )
+
+    cover_letter_file = forms.FileField(
+        label="*Upload Your Cover Letter/Letter of Interest",
+    )
+
     have_worked_under_another_name = forms.ChoiceField(
         label='*Have you ever worked under another name?',
         widget=widgets.RadioSelect,
         choices=YES_NO_CHOICES
     )
-    under_what_name = forms.CharField(label='If yes, under what name(s)')
-    street_address = forms.CharField(label='Street Address')
-    street_address2 = forms.CharField(label='Addres line 2')
-    city = forms.CharField(label='City')
-    state = forms.CharField(label='State')
-    zip_code = forms.CharField(label='Postal/Zip Code')
+
+    under_what_name = forms.CharField(
+        label='If yes, under what name(s)',
+        required=False,
+    )
+
+    street_address = forms.CharField(
+        label='Street Address'
+    )
+
+    street_address2 = forms.CharField(
+        label='Addres line 2'
+    )
+
+    city = forms.CharField(
+        label='City'
+    )
+
+    state = forms.CharField(
+        label='State'
+    )
+
+    zip_code = forms.CharField(
+        label='Postal/Zip Code'
+    )
+
     country = LazyTypedChoiceField(
         label='Country',
         choices=countries,
         widget=CountrySelectWidget()
     )
-    hear_about_this_job = forms.CharField(label='*How did you hear about this job?')
+
+    hear_about_this_job = forms.CharField(
+        label='*How did you hear about this job?'
+    )
+
     referred_by_employee = forms.ChoiceField(
         label='Were you referred by an employee?',
         widget=widgets.RadioSelect,
         choices=YES_NO_CHOICES
     )
-    employee_name = forms.CharField(label='If yes, list name(s)', required=False)
+
+    employee_name = forms.CharField(
+        label='If yes, list name(s)',
+        required=False
+    )
+
     day_available_for_work = forms.DateField(
         label='*Day available for work',
         widget=forms.DateInput(
@@ -71,17 +122,39 @@ class PersonalInfoForm(forms.Form):
             }
         )
     )
-    salary_required = forms.DecimalField(label='*Salary required')
+
+    salary_required = forms.DecimalField(
+        label='*Salary required'
+    )
+
     salary_format = forms.ChoiceField(
         label='*Please select a format',
         widget=widgets.RadioSelect,
         choices=SALARY_FORMAT_CHOICES
     )
+
     have_applied_to_sachs = forms.ChoiceField(
         label='*Have you ever applied to work at SACHS?',
         widget=widgets.RadioSelect,
         choices=YES_NO_CHOICES
     )
+
+    def clean(self):
+        cleaned_data = super(PersonalInfoForm, self).clean()
+
+        have_worked_under_another_name = cleaned_data.get('have_worked_under_another_name')
+        under_what_name = cleaned_data.get('under_what_name')
+
+        referred_by_employee = cleaned_data.get('referred_by_employee')
+        employee_name = cleaned_data.get('employee_name')
+
+        if not have_worked_under_another_name or \
+            (have_worked_under_another_name == 'Yes' and not under_what_name):
+            self.add_error('under_what_name', 'You must supply this field if you had worked under another name.')
+
+        if not referred_by_employee or \
+                (referred_by_employee == 'Yes' and not employee_name):
+            self.add_error('employee_name', 'You must supply this field if you were referred by an employee.')
 
 
 class EducationForm(forms.Form):
@@ -172,6 +245,28 @@ class ProfessionalLicenseForm(forms.Form):
             required=required
         )
 
+    # def clean(self):
+    #     cleaned_data = super(ProfessionalLicenseForm, self).clean()
+    #
+    #     fields1 = ['license_%d' % i for i in range(1, 4)]
+    #     fields2 = ['state_%d' % i for i in range(1, 4)]
+    #     fields3 = ['license_number_%d' % i for i in range(1, 4)]
+    #     fields4 = ['expire_date_%d' % i for i in range(1, 4)]
+    #
+    #     for i in range(4):
+    #         field1 = cleaned_data.get(fields1[i])
+    #         field2 = cleaned_data.get(fields2[i])
+    #         field3 = cleaned_data.get(fields3[i])
+    #         field4 = cleaned_data.get(fields4[i])
+    #
+    #         if field1:
+    #             if not field2:
+    #                 self.add_error(fields2[i], 'This field is required')
+    #             if not field3:
+    #                 self.add_error(fields3[i], 'This field is required')
+    #             if not field4:
+    #                 self.add_error(fields4[i], 'This field is required')
+
 
 class ProfessionalReferenceForm(forms.Form):
     eligible_for_employment_in_us = forms.ChoiceField(
@@ -181,7 +276,8 @@ class ProfessionalReferenceForm(forms.Form):
     )
 
     supporting_documentation = forms.ChoiceField(
-        label='*If so, are you able to furnish supporting documentation',
+        label='*If so, are you able to furnish supporting documentation?',
+        required=False,
         choices=YES_NO_CHOICES,
         widget=forms.widgets.RadioSelect
     )
@@ -191,6 +287,19 @@ class ProfessionalReferenceForm(forms.Form):
 
         for i in range(1, 4):
             self._create_form(i)
+
+    def clean(self):
+        cleaned_data = super(ProfessionalReferenceForm, self).clean()
+        eligible_for_employment_in_us = cleaned_data.get('eligible_for_employment_in_us')
+        supporting_documentation = cleaned_data.get('supporting_documentation')
+
+        if not eligible_for_employment_in_us or \
+            (eligible_for_employment_in_us == 'Yes' and not supporting_documentation):
+            self.add_error(
+                'supporting_documentation',
+                'You must supply this field if you are legally eligible for employment in the '
+                'United State of America.'
+            )
 
     def _create_form(self, i, required=False):
         self.fields['reference_%d' % i] = forms.CharField(
