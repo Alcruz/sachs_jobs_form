@@ -183,3 +183,9 @@ jspm_packages
 
 # sqlite db
 db.sqlite3
+
+#django static folder
+staticfiles/
+
+#django media folder
+media/

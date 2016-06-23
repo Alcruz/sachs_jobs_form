@@ -4,6 +4,7 @@ django-bootstrap3==7.0.1
 django-countries==3.4.1
 django-datetime-widget==0.9.3
 django-formtools==1.0
+django-wkhtmltopdf==3.0.0
 gunicorn==19.6.0
 psycopg2==2.6.1
 pytz==2016.4
