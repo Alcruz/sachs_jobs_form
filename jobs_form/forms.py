@@ -78,7 +78,8 @@ class PersonalInfoForm(forms.Form):
     )
 
     street_address2 = forms.CharField(
-        label='Addres line 2'
+        label='Addres line 2',
+        required=False
     )
 
     city = forms.CharField(
@@ -193,7 +194,7 @@ class EmploymentHistoryForm(forms.Form):
     company_name = forms.CharField(label='*Company Name')
     employer_phone_number = forms.CharField(label="*Employer's Phone Number")
     address_street = forms.CharField(label='Street Address')
-    address_street_line2 = forms.CharField(label='Address line 2')
+    address_street_line2 = forms.CharField(label='Address line 2', required=False)
     city = forms.CharField(label='City')
     state = forms.CharField(label='State')
     country = LazyTypedChoiceField(label='Country', choices=countries)
