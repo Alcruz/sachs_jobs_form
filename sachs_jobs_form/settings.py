@@ -209,8 +209,8 @@ WKHTMLTOPDF_CMD_OPTIONS = {
 }
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_PORT = '465'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'alvinj.delacruz'
-EMAIL_HOST_PASSWORD = 'PissMeOff.'
+EMAIL_PORT = ''
+EMAIL_HOST = ''
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_SSL = True
