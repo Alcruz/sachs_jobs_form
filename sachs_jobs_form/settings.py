@@ -202,7 +202,7 @@ BOOTSTRAP3 = {
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 
-WKHTMLTOPDF_CMD = '/usr/local/bin/wkhtmltopdf'
+WKHTMLTOPDF_CMD = os.environ.get('WKHTMLTOPDF_PATH', '/usr/local/bin/wkhtmltopdf')
 WKHTMLTOPDF_CMD_OPTIONS = {
     'margin-left': 0,
     'margin-right': 0
