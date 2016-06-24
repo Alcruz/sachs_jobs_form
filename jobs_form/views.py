@@ -16,10 +16,10 @@ class JobApplicationWizard(SessionWizardView):
     def done(self, form_list, form_dict, **kwargs):
 
         email = EmailMessage(
-            "SACHS Apply",
-            "A new job application has arrive.",
-            "alvinj.delacruz@gmail.com",
-            ["alvinj.delacruz@gmail.com"],
+            settings.EMAIL_MESSAGE_SUBJECT,
+            settings.EMAIL_MESSAGE_BODY,
+            settings.EMAIL_MESSAGE_SENDER,
+            settings.EMAIL_MESSAGE_RECIPIENTS,
         )
 
         cover_letter_file = form_dict['0'].cleaned_data['cover_letter_file']

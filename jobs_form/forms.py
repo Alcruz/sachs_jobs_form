@@ -97,6 +97,7 @@ class PersonalInfoForm(forms.Form):
     country = LazyTypedChoiceField(
         label='Country',
         choices=countries,
+
         widget=CountrySelectWidget()
     )
 

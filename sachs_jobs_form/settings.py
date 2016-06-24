@@ -205,7 +205,9 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 WKHTMLTOPDF_CMD = os.environ.get('WKHTMLTOPDF_PATH', '/usr/local/bin/wkhtmltopdf')
 WKHTMLTOPDF_CMD_OPTIONS = {
     'margin-left': 0,
-    'margin-right': 0
+    'margin-right': 0,
+    'encoding': 'utf8',
+    'quiet': True,
 }
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -214,3 +216,8 @@ EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'sachsjobs')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'Facil2217.')
 EMAIL_USE_SSL = os.environ.get('EMAIL_USE_SSL', True)
+
+EMAIL_MESSAGE_SUBJECT = os.environ.get('EMAIL_MESSAGE_SUBJECT', 'SACHS Apply')
+EMAIL_MESSAGE_BODY = os.environ.get('EMAIL_MESSAGE_BODY', 'A new job application has arrive.')
+EMAIL_MESSAGE_SENDER = os.environ.get('EMAIL_MESSAGE_SENDER', 'sachsjobs@gmail.com')
+EMAIL_MESSAGE_RECIPIENTS = os.environ.get('EMAIL_MESSAGE_RECIPIENTS', 'sachsjobs@gmail.com').split(', ')
