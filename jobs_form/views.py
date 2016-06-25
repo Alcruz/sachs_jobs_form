@@ -3,13 +3,11 @@ from django.core.files.storage import FileSystemStorage
 from django.core.mail import EmailMessage
 from django.shortcuts import render
 
-from formtools.wizard.views import SessionWizardView
+from formtools.wizard.views import CookieWizardView
 from wkhtmltopdf.views import PDFTemplateResponse
 
 
-
-
-class JobApplicationWizard(SessionWizardView):
+class JobApplicationWizard(CookieWizardView):
     file_storage = FileSystemStorage(location=settings.MEDIA_ROOT)
     template_name = 'jobs_form/apply.html'
 

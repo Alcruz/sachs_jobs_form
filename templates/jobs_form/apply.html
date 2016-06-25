@@ -5,7 +5,7 @@
 
 {% block content %}
     <p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</p>
-    <form clas="form" enctype="multipart/form-data" action="" method="post">
+    <form novalidate clas="form" enctype="multipart/form-data" action="" method="post">
         {% csrf_token %}
         {{ wizard.management_form }}
         {% if wizard.form.forms %}
