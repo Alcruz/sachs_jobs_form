@@ -97,7 +97,7 @@ class PersonalInfoForm(forms.Form):
     country = LazyTypedChoiceField(
         label='Country',
         choices=countries,
-
+        initial='US',
         widget=CountrySelectWidget()
     )
 
@@ -198,7 +198,7 @@ class EmploymentHistoryForm(forms.Form):
     address_street_line2 = forms.CharField(label='Address line 2', required=False)
     city = forms.CharField(label='City')
     state = forms.CharField(label='State')
-    country = LazyTypedChoiceField(label='Country', choices=countries)
+    country = LazyTypedChoiceField(label='Country', choices=countries, initial='US')
     job_title = forms.CharField(label='*Job Title')
     employed_from = forms.DateField(
         label='*Employed From',
