@@ -7,3 +7,4 @@ django-formtools==1.0
 gunicorn==19.6.0
 pytz==2016.4
 whitenoise==3.2
+Weasyprint
