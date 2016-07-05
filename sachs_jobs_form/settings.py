@@ -26,7 +26,7 @@ SECRET_KEY = '(-o2f-3z0i5#^241qx5ui#fr36*5k3wty*dir7mbwugl66ib5@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'formtools',
     'bootstrap3',
     'django_countries',
-    'wkhtmltopdf',
     'jobs_form',
 ]
 
@@ -200,15 +199,6 @@ BOOTSTRAP3 = {
 # Simplified static file serving.
 # https://warehouse.python.org/project/whitenoise/
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-
-
-WKHTMLTOPDF_CMD = os.environ.get('WKHTMLTOPDF_PATH', '/usr/local/bin/wkhtmltopdf')
-WKHTMLTOPDF_CMD_OPTIONS = {
-    'margin-left': 0,
-    'margin-right': 0,
-    'encoding': 'utf8',
-    'quiet': True,
-}
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_PORT = os.environ.get('EMAIL_PORT', '465')

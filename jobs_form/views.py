@@ -4,7 +4,6 @@ from django.core.mail import EmailMessage
 from django.shortcuts import render
 
 from formtools.wizard.views import CookieWizardView
-from wkhtmltopdf.views import PDFTemplateResponse
 
 
 class JobApplicationWizard(CookieWizardView):
@@ -26,19 +25,19 @@ class JobApplicationWizard(CookieWizardView):
         email.attach_file(cover_letter_file.file.name)
         email.attach_file(resume_file.file.name)
 
-        pdf = PDFTemplateResponse(
-            self.request,
-            template='jobs_form/pdf_body.html',
-            context={'forms': form_list},
-        )
-        pdf.render()
+        # pdf = PDFTemplateResponse(
+        #     self.request,
+        #     template='jobs_form/pdf_body.html',
+        #     context={'forms': form_list},
+        # )
+        # pdf.render()
 
-        email.attach(
-            filename='form.pdf',
-            content=pdf.content,
-            mimetype='application/pdf'
-        )
-
-        email.send()
+        # email.attach(
+        #     filename='form.pdf',
+        #     content=pdf.content,
+        #     mimetype='application/pdf'
+        # )
+        #
+        # email.send()
 
         return render(self.request, 'jobs_form/done.html')
