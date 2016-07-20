@@ -1,0 +1,864 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>sachs_jobs_form</Name>
+    <RootNamespace>DjangoWebProject1</RootNamespace>
+    <InterpreterId>{d3cb5127-e818-400a-846b-8b3141c31750}</InterpreterId>
+    <InterpreterVersion>3.4</InterpreterVersion>
+    <NameOfLastUsedPublishProfile>SACHJobsForm - Web Deploy</NameOfLastUsedPublishProfile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>31e09a78-9448-4d6e-a787-adc7f9d2a64e</ProjectGuid>
+    <ProjectHome>
+    </ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <OutputPath>.</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="jobs_form\admin.py" />
+    <Compile Include="jobs_form\apps.py" />
+    <Compile Include="jobs_form\forms.py" />
+    <Compile Include="jobs_form\migrations\__init__.py" />
+    <Compile Include="jobs_form\models.py" />
+    <Compile Include="jobs_form\tests.py" />
+    <Compile Include="jobs_form\urls.py" />
+    <Compile Include="jobs_form\views.py" />
+    <Compile Include="jobs_form\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="sachs_jobs_form\settings.py" />
+    <Compile Include="sachs_jobs_form\urls.py" />
+    <Compile Include="sachs_jobs_form\wsgi.py" />
+    <Compile Include="sachs_jobs_form\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="jobs_form\" />
+    <Folder Include="jobs_form\migrations\" />
+    <Folder Include="sachs_jobs_form\" />
+    <Folder Include="sachs_jobs_form\static\" />
+    <Folder Include="sachs_jobs_form\static\jobs_form\" />
+    <Folder Include="sachs_jobs_form\static\jobs_form\css\" />
+    <Folder Include="sachs_jobs_form\static\jobs_form\images\" />
+    <Folder Include="static\" />
+    <Folder Include="static\admin\" />
+    <Folder Include="static\admin\css\" />
+    <Folder Include="static\admin\fonts\" />
+    <Folder Include="static\admin\img\" />
+    <Folder Include="static\admin\img\gis\" />
+    <Folder Include="static\admin\js\" />
+    <Folder Include="static\admin\js\admin\" />
+    <Folder Include="static\admin\js\vendor\" />
+    <Folder Include="static\admin\js\vendor\jquery\" />
+    <Folder Include="static\admin\js\vendor\xregexp\" />
+    <Folder Include="static\flags\" />
+    <Folder Include="static\jobs_form\" />
+    <Folder Include="static\jobs_form\css\" />
+    <Folder Include="static\jobs_form\images\" />
+    <Folder Include="templates\" />
+    <Folder Include="templates\jobs_form\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="requirements.txt" />
+    <Content Include="templates\jobs_form\TestPdf.html" />
+    <None Include="SACHJobsForm - Web Deploy.pubxml" />
+    <Content Include="sachs_jobs_form\static\jobs_form\css\styles.css" />
+    <Content Include="sachs_jobs_form\static\jobs_form\images\sachs-logo.png" />
+    <Content Include="static\admin\css\base.9f6547179ace.css" />
+    <Content Include="static\admin\css\base.9f6547179ace.css.gz" />
+    <Content Include="static\admin\css\base.css" />
+    <Content Include="static\admin\css\base.css.gz" />
+    <Content Include="static\admin\css\changelists.32a12db9a480.css" />
+    <Content Include="static\admin\css\changelists.32a12db9a480.css.gz" />
+    <Content Include="static\admin\css\changelists.css" />
+    <Content Include="static\admin\css\changelists.css.gz" />
+    <Content Include="static\admin\css\dashboard.4898e2e9983d.css" />
+    <Content Include="static\admin\css\dashboard.4898e2e9983d.css.gz" />
+    <Content Include="static\admin\css\dashboard.css" />
+    <Content Include="static\admin\css\dashboard.css.gz" />
+    <Content Include="static\admin\css\fonts.cc6140298ba7.css" />
+    <Content Include="static\admin\css\fonts.cc6140298ba7.css.gz" />
+    <Content Include="static\admin\css\fonts.css" />
+    <Content Include="static\admin\css\fonts.css.gz" />
+    <Content Include="static\admin\css\forms.70b858e61281.css" />
+    <Content Include="static\admin\css\forms.70b858e61281.css.gz" />
+    <Content Include="static\admin\css\forms.css" />
+    <Content Include="static\admin\css\forms.css.gz" />
+    <Content Include="static\admin\css\login.a846c0e2ef65.css" />
+    <Content Include="static\admin\css\login.a846c0e2ef65.css.gz" />
+    <Content Include="static\admin\css\login.css" />
+    <Content Include="static\admin\css\login.css.gz" />
+    <Content Include="static\admin\css\rtl.css" />
+    <Content Include="static\admin\css\rtl.css.gz" />
+    <Content Include="static\admin\css\rtl.e024aaf6df25.css" />
+    <Content Include="static\admin\css\rtl.e024aaf6df25.css.gz" />
+    <Content Include="static\admin\css\widgets.a7251c097987.css" />
+    <Content Include="static\admin\css\widgets.a7251c097987.css.gz" />
+    <Content Include="static\admin\css\widgets.css" />
+    <Content Include="static\admin\css\widgets.css.gz" />
+    <Content Include="static\admin\fonts\LICENSE.d273d63619c9.txt" />
+    <Content Include="static\admin\fonts\LICENSE.d273d63619c9.txt.gz" />
+    <Content Include="static\admin\fonts\LICENSE.txt" />
+    <Content Include="static\admin\fonts\LICENSE.txt.gz" />
+    <Content Include="static\admin\fonts\README.2c3d0bcdede2.txt" />
+    <Content Include="static\admin\fonts\README.txt" />
+    <Content Include="static\admin\fonts\Roboto-Bold-webfont.2ad99072841e.woff" />
+    <Content Include="static\admin\fonts\Roboto-Bold-webfont.woff" />
+    <Content Include="static\admin\fonts\Roboto-Light-webfont.b446c2399bb6.woff" />
+    <Content Include="static\admin\fonts\Roboto-Light-webfont.woff" />
+    <Content Include="static\admin\fonts\Roboto-Regular-webfont.ec39515ae8c6.woff" />
+    <Content Include="static\admin\fonts\Roboto-Regular-webfont.woff" />
+    <Content Include="static\admin\img\calendar-icons.39b290681a8b.svg" />
+    <Content Include="static\admin\img\calendar-icons.39b290681a8b.svg.gz" />
+    <Content Include="static\admin\img\calendar-icons.svg" />
+    <Content Include="static\admin\img\calendar-icons.svg.gz" />
+    <Content Include="static\admin\img\gis\move_vertex_off.7a23bf31ef8a.svg" />
+    <Content Include="static\admin\img\gis\move_vertex_off.7a23bf31ef8a.svg.gz" />
+    <Content Include="static\admin\img\gis\move_vertex_off.svg" />
+    <Content Include="static\admin\img\gis\move_vertex_off.svg.gz" />
+    <Content Include="static\admin\img\gis\move_vertex_on.0047eba25b67.svg" />
+    <Content Include="static\admin\img\gis\move_vertex_on.0047eba25b67.svg.gz" />
+    <Content Include="static\admin\img\gis\move_vertex_on.svg" />
+    <Content Include="static\admin\img\gis\move_vertex_on.svg.gz" />
+    <Content Include="static\admin\img\icon-addlink.d519b3bab011.svg" />
+    <Content Include="static\admin\img\icon-addlink.d519b3bab011.svg.gz" />
+    <Content Include="static\admin\img\icon-addlink.svg" />
+    <Content Include="static\admin\img\icon-addlink.svg.gz" />
+    <Content Include="static\admin\img\icon-alert.034cc7d8a67f.svg" />
+    <Content Include="static\admin\img\icon-alert.034cc7d8a67f.svg.gz" />
+    <Content Include="static\admin\img\icon-alert.svg" />
+    <Content Include="static\admin\img\icon-alert.svg.gz" />
+    <Content Include="static\admin\img\icon-calendar.ac7aea671bea.svg" />
+    <Content Include="static\admin\img\icon-calendar.ac7aea671bea.svg.gz" />
+    <Content Include="static\admin\img\icon-calendar.svg" />
+    <Content Include="static\admin\img\icon-calendar.svg.gz" />
+    <Content Include="static\admin\img\icon-changelink.18d2fd706348.svg" />
+    <Content Include="static\admin\img\icon-changelink.18d2fd706348.svg.gz" />
+    <Content Include="static\admin\img\icon-changelink.svg" />
+    <Content Include="static\admin\img\icon-changelink.svg.gz" />
+    <Content Include="static\admin\img\icon-clock.e1d4dfac3f2b.svg" />
+    <Content Include="static\admin\img\icon-clock.e1d4dfac3f2b.svg.gz" />
+    <Content Include="static\admin\img\icon-clock.svg" />
+    <Content Include="static\admin\img\icon-clock.svg.gz" />
+    <Content Include="static\admin\img\icon-deletelink.564ef9dc3854.svg" />
+    <Content Include="static\admin\img\icon-deletelink.564ef9dc3854.svg.gz" />
+    <Content Include="static\admin\img\icon-deletelink.svg" />
+    <Content Include="static\admin\img\icon-deletelink.svg.gz" />
+    <Content Include="static\admin\img\icon-no.439e821418cd.svg" />
+    <Content Include="static\admin\img\icon-no.439e821418cd.svg.gz" />
+    <Content Include="static\admin\img\icon-no.svg" />
+    <Content Include="static\admin\img\icon-no.svg.gz" />
+    <Content Include="static\admin\img\icon-unknown-alt.81536e128bb6.svg" />
+    <Content Include="static\admin\img\icon-unknown-alt.81536e128bb6.svg.gz" />
+    <Content Include="static\admin\img\icon-unknown-alt.svg" />
+    <Content Include="static\admin\img\icon-unknown-alt.svg.gz" />
+    <Content Include="static\admin\img\icon-unknown.a18cb4398978.svg" />
+    <Content Include="static\admin\img\icon-unknown.a18cb4398978.svg.gz" />
+    <Content Include="static\admin\img\icon-unknown.svg" />
+    <Content Include="static\admin\img\icon-unknown.svg.gz" />
+    <Content Include="static\admin\img\icon-yes.d2f9f035226a.svg" />
+    <Content Include="static\admin\img\icon-yes.d2f9f035226a.svg.gz" />
+    <Content Include="static\admin\img\icon-yes.svg" />
+    <Content Include="static\admin\img\icon-yes.svg.gz" />
+    <Content Include="static\admin\img\inline-delete.fec1b761f254.svg" />
+    <Content Include="static\admin\img\inline-delete.fec1b761f254.svg.gz" />
+    <Content Include="static\admin\img\inline-delete.svg" />
+    <Content Include="static\admin\img\inline-delete.svg.gz" />
+    <Content Include="static\admin\img\LICENSE" />
+    <Content Include="static\admin\img\LICENSE.2c54f4e1ca1c" />
+    <Content Include="static\admin\img\LICENSE.2c54f4e1ca1c.gz" />
+    <Content Include="static\admin\img\LICENSE.gz" />
+    <Content Include="static\admin\img\README.837277fa1908.txt" />
+    <Content Include="static\admin\img\README.837277fa1908.txt.gz" />
+    <Content Include="static\admin\img\README.txt" />
+    <Content Include="static\admin\img\README.txt.gz" />
+    <Content Include="static\admin\img\search.7cf54ff789c6.svg" />
+    <Content Include="static\admin\img\search.7cf54ff789c6.svg.gz" />
+    <Content Include="static\admin\img\search.svg" />
+    <Content Include="static\admin\img\search.svg.gz" />
+    <Content Include="static\admin\img\selector-icons.b4555096cea2.svg" />
+    <Content Include="static\admin\img\selector-icons.b4555096cea2.svg.gz" />
+    <Content Include="static\admin\img\selector-icons.svg" />
+    <Content Include="static\admin\img\selector-icons.svg.gz" />
+    <Content Include="static\admin\img\sorting-icons.3a097b59f104.svg" />
+    <Content Include="static\admin\img\sorting-icons.3a097b59f104.svg.gz" />
+    <Content Include="static\admin\img\sorting-icons.svg" />
+    <Content Include="static\admin\img\sorting-icons.svg.gz" />
+    <Content Include="static\admin\img\tooltag-add.e59d620a9742.svg" />
+    <Content Include="static\admin\img\tooltag-add.e59d620a9742.svg.gz" />
+    <Content Include="static\admin\img\tooltag-add.svg" />
+    <Content Include="static\admin\img\tooltag-add.svg.gz" />
+    <Content Include="static\admin\img\tooltag-arrowright.bbfb788a849e.svg" />
+    <Content Include="static\admin\img\tooltag-arrowright.bbfb788a849e.svg.gz" />
+    <Content Include="static\admin\img\tooltag-arrowright.svg" />
+    <Content Include="static\admin\img\tooltag-arrowright.svg.gz" />
+    <Content Include="static\admin\js\actions.df9119bcc981.js" />
+    <Content Include="static\admin\js\actions.df9119bcc981.js.gz" />
+    <Content Include="static\admin\js\actions.js" />
+    <Content Include="static\admin\js\actions.js.gz" />
+    <Content Include="static\admin\js\actions.min.c8d91e1d05fe.js" />
+    <Content Include="static\admin\js\actions.min.c8d91e1d05fe.js.gz" />
+    <Content Include="static\admin\js\actions.min.js" />
+    <Content Include="static\admin\js\actions.min.js.gz" />
+    <Content Include="static\admin\js\admin\DateTimeShortcuts.1a1d41ec13f8.js" />
+    <Content Include="static\admin\js\admin\DateTimeShortcuts.1a1d41ec13f8.js.gz" />
+    <Content Include="static\admin\js\admin\DateTimeShortcuts.js" />
+    <Content Include="static\admin\js\admin\DateTimeShortcuts.js.gz" />
+    <Content Include="static\admin\js\admin\RelatedObjectLookups.b3916e8770e8.js" />
+    <Content Include="static\admin\js\admin\RelatedObjectLookups.b3916e8770e8.js.gz" />
+    <Content Include="static\admin\js\admin\RelatedObjectLookups.js" />
+    <Content Include="static\admin\js\admin\RelatedObjectLookups.js.gz" />
+    <Content Include="static\admin\js\calendar.847972dc11ca.js" />
+    <Content Include="static\admin\js\calendar.847972dc11ca.js.gz" />
+    <Content Include="static\admin\js\calendar.js" />
+    <Content Include="static\admin\js\calendar.js.gz" />
+    <Content Include="static\admin\js\collapse.17d715df2104.js" />
+    <Content Include="static\admin\js\collapse.17d715df2104.js.gz" />
+    <Content Include="static\admin\js\collapse.js" />
+    <Content Include="static\admin\js\collapse.js.gz" />
+    <Content Include="static\admin\js\collapse.min.dc930adb2821.js" />
+    <Content Include="static\admin\js\collapse.min.dc930adb2821.js.gz" />
+    <Content Include="static\admin\js\collapse.min.js" />
+    <Content Include="static\admin\js\collapse.min.js.gz" />
+    <Content Include="static\admin\js\core.84da04fcbfaf.js" />
+    <Content Include="static\admin\js\core.84da04fcbfaf.js.gz" />
+    <Content Include="static\admin\js\core.js" />
+    <Content Include="static\admin\js\core.js.gz" />
+    <Content Include="static\admin\js\inlines.8199258210ef.js" />
+    <Content Include="static\admin\js\inlines.8199258210ef.js.gz" />
+    <Content Include="static\admin\js\inlines.js" />
+    <Content Include="static\admin\js\inlines.js.gz" />
+    <Content Include="static\admin\js\inlines.min.91c080dc1cbf.js" />
+    <Content Include="static\admin\js\inlines.min.91c080dc1cbf.js.gz" />
+    <Content Include="static\admin\js\inlines.min.js" />
+    <Content Include="static\admin\js\inlines.min.js.gz" />
+    <Content Include="static\admin\js\jquery.init.95b62fa19378.js" />
+    <Content Include="static\admin\js\jquery.init.95b62fa19378.js.gz" />
+    <Content Include="static\admin\js\jquery.init.js" />
+    <Content Include="static\admin\js\jquery.init.js.gz" />
+    <Content Include="static\admin\js\prepopulate.ff9208865444.js" />
+    <Content Include="static\admin\js\prepopulate.ff9208865444.js.gz" />
+    <Content Include="static\admin\js\prepopulate.js" />
+    <Content Include="static\admin\js\prepopulate.js.gz" />
+    <Content Include="static\admin\js\prepopulate.min.f4057ebb9b62.js" />
+    <Content Include="static\admin\js\prepopulate.min.f4057ebb9b62.js.gz" />
+    <Content Include="static\admin\js\prepopulate.min.js" />
+    <Content Include="static\admin\js\prepopulate.min.js.gz" />
+    <Content Include="static\admin\js\SelectBox.9b544c47149c.js" />
+    <Content Include="static\admin\js\SelectBox.9b544c47149c.js.gz" />
+    <Content Include="static\admin\js\SelectBox.js" />
+    <Content Include="static\admin\js\SelectBox.js.gz" />
+    <Content Include="static\admin\js\SelectFilter2.92ca1fea6656.js" />
+    <Content Include="static\admin\js\SelectFilter2.92ca1fea6656.js.gz" />
+    <Content Include="static\admin\js\SelectFilter2.js" />
+    <Content Include="static\admin\js\SelectFilter2.js.gz" />
+    <Content Include="static\admin\js\timeparse.51258861a46a.js" />
+    <Content Include="static\admin\js\timeparse.51258861a46a.js.gz" />
+    <Content Include="static\admin\js\timeparse.js" />
+    <Content Include="static\admin\js\timeparse.js.gz" />
+    <Content Include="static\admin\js\urlify.72f9b26e3ecd.js" />
+    <Content Include="static\admin\js\urlify.72f9b26e3ecd.js.gz" />
+    <Content Include="static\admin\js\urlify.js" />
+    <Content Include="static\admin\js\urlify.js.gz" />
+    <Content Include="static\admin\js\vendor\jquery\jquery.107fbe9555bf.js" />
+    <Content Include="static\admin\js\vendor\jquery\jquery.107fbe9555bf.js.gz" />
+    <Content Include="static\admin\js\vendor\jquery\jquery.js" />
+    <Content Include="static\admin\js\vendor\jquery\jquery.js.gz" />
+    <Content Include="static\admin\js\vendor\jquery\jquery.min.f9c7afd05729.js" />
+    <Content Include="static\admin\js\vendor\jquery\jquery.min.f9c7afd05729.js.gz" />
+    <Content Include="static\admin\js\vendor\jquery\jquery.min.js" />
+    <Content Include="static\admin\js\vendor\jquery\jquery.min.js.gz" />
+    <Content Include="static\admin\js\vendor\jquery\LICENSE-JQUERY.a158210a2737.txt" />
+    <Content Include="static\admin\js\vendor\jquery\LICENSE-JQUERY.a158210a2737.txt.gz" />
+    <Content Include="static\admin\js\vendor\jquery\LICENSE-JQUERY.txt" />
+    <Content Include="static\admin\js\vendor\jquery\LICENSE-JQUERY.txt.gz" />
+    <Content Include="static\admin\js\vendor\xregexp\LICENSE-XREGEXP.d64cecf4f157.txt" />
+    <Content Include="static\admin\js\vendor\xregexp\LICENSE-XREGEXP.d64cecf4f157.txt.gz" />
+    <Content Include="static\admin\js\vendor\xregexp\LICENSE-XREGEXP.txt" />
+    <Content Include="static\admin\js\vendor\xregexp\LICENSE-XREGEXP.txt.gz" />
+    <Content Include="static\admin\js\vendor\xregexp\xregexp.min.c95393b8ca4d.js" />
+    <Content Include="static\admin\js\vendor\xregexp\xregexp.min.c95393b8ca4d.js.gz" />
+    <Content Include="static\admin\js\vendor\xregexp\xregexp.min.js" />
+    <Content Include="static\admin\js\vendor\xregexp\xregexp.min.js.gz" />
+    <Content Include="static\flags\ad.31b5aa72bb5c.gif" />
+    <Content Include="static\flags\ad.gif" />
+    <Content Include="static\flags\ae.f3d1674bc792.gif" />
+    <Content Include="static\flags\ae.gif" />
+    <Content Include="static\flags\af.093aa02706e1.gif" />
+    <Content Include="static\flags\af.gif" />
+    <Content Include="static\flags\ag.1a05f3d4c997.gif" />
+    <Content Include="static\flags\ag.gif" />
+    <Content Include="static\flags\ai.704ff18d12a2.gif" />
+    <Content Include="static\flags\ai.gif" />
+    <Content Include="static\flags\al.db6f1bcf110b.gif" />
+    <Content Include="static\flags\al.gif" />
+    <Content Include="static\flags\am.28d4c0173a6e.gif" />
+    <Content Include="static\flags\am.gif" />
+    <Content Include="static\flags\ao.a96138e62f98.gif" />
+    <Content Include="static\flags\ao.gif" />
+    <Content Include="static\flags\aq.2350c4bcc485.gif" />
+    <Content Include="static\flags\aq.gif" />
+    <Content Include="static\flags\ar.0155716dc2c6.gif" />
+    <Content Include="static\flags\ar.gif" />
+    <Content Include="static\flags\as.543cd189b7da.gif" />
+    <Content Include="static\flags\as.gif" />
+    <Content Include="static\flags\at.26402499225d.gif" />
+    <Content Include="static\flags\at.gif" />
+    <Content Include="static\flags\au.0abdbcb7285a.gif" />
+    <Content Include="static\flags\au.gif" />
+    <Content Include="static\flags\aw.9cd612d6bfe4.gif" />
+    <Content Include="static\flags\aw.gif" />
+    <Content Include="static\flags\ax.e9e38d887cec.gif" />
+    <Content Include="static\flags\ax.gif" />
+    <Content Include="static\flags\az.0a29d9df7f58.gif" />
+    <Content Include="static\flags\az.gif" />
+    <Content Include="static\flags\ba.3579e204a265.gif" />
+    <Content Include="static\flags\ba.gif" />
+    <Content Include="static\flags\bb.e4f3ba9c46f8.gif" />
+    <Content Include="static\flags\bb.gif" />
+    <Content Include="static\flags\bd.b44d2f6fc521.gif" />
+    <Content Include="static\flags\bd.gif" />
+    <Content Include="static\flags\be.cb4422def7c5.gif" />
+    <Content Include="static\flags\be.gif" />
+    <Content Include="static\flags\bf.b1deddf25222.gif" />
+    <Content Include="static\flags\bf.gif" />
+    <Content Include="static\flags\bg.b949bc9d4924.gif" />
+    <Content Include="static\flags\bg.gif" />
+    <Content Include="static\flags\bh.433d160ca9a2.gif" />
+    <Content Include="static\flags\bh.gif" />
+    <Content Include="static\flags\bi.96d2f406b299.gif" />
+    <Content Include="static\flags\bi.gif" />
+    <Content Include="static\flags\bj.5da111122470.gif" />
+    <Content Include="static\flags\bj.gif" />
+    <Content Include="static\flags\bl.cc38d01b0b77.gif" />
+    <Content Include="static\flags\bl.gif" />
+    <Content Include="static\flags\bm.2251c8d59a84.gif" />
+    <Content Include="static\flags\bm.gif" />
+    <Content Include="static\flags\bn.18158d06207c.gif" />
+    <Content Include="static\flags\bn.gif" />
+    <Content Include="static\flags\bo.19fede5d8ad7.gif" />
+    <Content Include="static\flags\bo.gif" />
+    <Content Include="static\flags\bq.5dd38fec3fd2.gif" />
+    <Content Include="static\flags\bq.gif" />
+    <Content Include="static\flags\br.1f70016795f7.gif" />
+    <Content Include="static\flags\br.gif" />
+    <Content Include="static\flags\bs.161af238991b.gif" />
+    <Content Include="static\flags\bs.gif" />
+    <Content Include="static\flags\bt.377214e5dde7.gif" />
+    <Content Include="static\flags\bt.gif" />
+    <Content Include="static\flags\bv.64573479a6dd.gif" />
+    <Content Include="static\flags\bv.gif" />
+    <Content Include="static\flags\bw.d187650ab99b.gif" />
+    <Content Include="static\flags\bw.gif" />
+    <Content Include="static\flags\by.60a0ee5d3b4c.gif" />
+    <Content Include="static\flags\by.gif" />
+    <Content Include="static\flags\bz.ded38f41d1b1.gif" />
+    <Content Include="static\flags\bz.gif" />
+    <Content Include="static\flags\ca.7ec0faa264ab.gif" />
+    <Content Include="static\flags\ca.gif" />
+    <Content Include="static\flags\cc.63cf96bd1f56.gif" />
+    <Content Include="static\flags\cc.gif" />
+    <Content Include="static\flags\cd.75b3b4209e38.gif" />
+    <Content Include="static\flags\cd.gif" />
+    <Content Include="static\flags\cf.746e77516c2c.gif" />
+    <Content Include="static\flags\cf.gif" />
+    <Content Include="static\flags\cg.709d8c79da90.gif" />
+    <Content Include="static\flags\cg.gif" />
+    <Content Include="static\flags\ch.62bcf6f0ae83.gif" />
+    <Content Include="static\flags\ch.gif" />
+    <Content Include="static\flags\ci.edf214590cf1.gif" />
+    <Content Include="static\flags\ci.gif" />
+    <Content Include="static\flags\ck.4e11b1657878.gif" />
+    <Content Include="static\flags\ck.gif" />
+    <Content Include="static\flags\cl.73091a1bcc48.gif" />
+    <Content Include="static\flags\cl.gif" />
+    <Content Include="static\flags\cm.1bd887da3380.gif" />
+    <Content Include="static\flags\cm.gif" />
+    <Content Include="static\flags\cn.c0743571c0c8.gif" />
+    <Content Include="static\flags\cn.gif" />
+    <Content Include="static\flags\co.b3883a047522.gif" />
+    <Content Include="static\flags\co.gif" />
+    <Content Include="static\flags\cr.0e145e74f510.gif" />
+    <Content Include="static\flags\cr.gif" />
+    <Content Include="static\flags\cu.b78e3045308c.gif" />
+    <Content Include="static\flags\cu.gif" />
+    <Content Include="static\flags\cv.d484479b8825.gif" />
+    <Content Include="static\flags\cv.gif" />
+    <Content Include="static\flags\cw.e5b5ff11ab40.gif" />
+    <Content Include="static\flags\cw.gif" />
+    <Content Include="static\flags\cx.48c6dd01cb9d.gif" />
+    <Content Include="static\flags\cx.gif" />
+    <Content Include="static\flags\cy.33a0874ba850.gif" />
+    <Content Include="static\flags\cy.gif" />
+    <Content Include="static\flags\cz.6261c34be0c9.gif" />
+    <Content Include="static\flags\cz.gif" />
+    <Content Include="static\flags\de.1442c8e59c21.gif" />
+    <Content Include="static\flags\de.gif" />
+    <Content Include="static\flags\dj.46035480fca7.gif" />
+    <Content Include="static\flags\dj.gif" />
+    <Content Include="static\flags\dk.fec226436019.gif" />
+    <Content Include="static\flags\dk.gif" />
+    <Content Include="static\flags\dm.120fc1fb8d71.gif" />
+    <Content Include="static\flags\dm.gif" />
+    <Content Include="static\flags\do.5e9fd0b17d54.gif" />
+    <Content Include="static\flags\do.gif" />
+    <Content Include="static\flags\dz.09c61994b666.gif" />
+    <Content Include="static\flags\dz.gif" />
+    <Content Include="static\flags\ec.1b8d3f640f91.gif" />
+    <Content Include="static\flags\ec.gif" />
+    <Content Include="static\flags\ee.5753331d04a6.gif" />
+    <Content Include="static\flags\ee.gif" />
+    <Content Include="static\flags\eg.25d9b8172c80.gif" />
+    <Content Include="static\flags\eg.gif" />
+    <Content Include="static\flags\eh.ad12dd127da1.gif" />
+    <Content Include="static\flags\eh.gif" />
+    <Content Include="static\flags\er.bb11cc49e340.gif" />
+    <Content Include="static\flags\er.gif" />
+    <Content Include="static\flags\es.9eaff86a7e54.gif" />
+    <Content Include="static\flags\es.gif" />
+    <Content Include="static\flags\et.56f4fb6c5d87.gif" />
+    <Content Include="static\flags\et.gif" />
+    <Content Include="static\flags\eu.8624abcbf53e.gif" />
+    <Content Include="static\flags\eu.gif" />
+    <Content Include="static\flags\fi.8b5471a6779e.gif" />
+    <Content Include="static\flags\fi.gif" />
+    <Content Include="static\flags\fj.84912566a5c2.gif" />
+    <Content Include="static\flags\fj.gif" />
+    <Content Include="static\flags\fk.fd92628544c6.gif" />
+    <Content Include="static\flags\fk.gif" />
+    <Content Include="static\flags\fm.8173194628e5.gif" />
+    <Content Include="static\flags\fm.gif" />
+    <Content Include="static\flags\fo.6f69850843a6.gif" />
+    <Content Include="static\flags\fo.gif" />
+    <Content Include="static\flags\fr.cc38d01b0b77.gif" />
+    <Content Include="static\flags\fr.gif" />
+    <Content Include="static\flags\ga.67d7529dd95f.gif" />
+    <Content Include="static\flags\ga.gif" />
+    <Content Include="static\flags\gb.32c036d7cc31.gif" />
+    <Content Include="static\flags\gb.gif" />
+    <Content Include="static\flags\gd.0c1388c87a69.gif" />
+    <Content Include="static\flags\gd.gif" />
+    <Content Include="static\flags\ge.108a89070296.gif" />
+    <Content Include="static\flags\ge.gif" />
+    <Content Include="static\flags\gf.cc38d01b0b77.gif" />
+    <Content Include="static\flags\gf.gif" />
+    <Content Include="static\flags\gg.458e67ce6647.gif" />
+    <Content Include="static\flags\gg.gif" />
+    <Content Include="static\flags\gh.ab939ba49d9e.gif" />
+    <Content Include="static\flags\gh.gif" />
+    <Content Include="static\flags\gi.694aaefbd1da.gif" />
+    <Content Include="static\flags\gi.gif" />
+    <Content Include="static\flags\gl.c08adbe02e04.gif" />
+    <Content Include="static\flags\gl.gif" />
+    <Content Include="static\flags\gm.d195a67a65ed.gif" />
+    <Content Include="static\flags\gm.gif" />
+    <Content Include="static\flags\gn.5a201a78198c.gif" />
+    <Content Include="static\flags\gn.gif" />
+    <Content Include="static\flags\gp.851dd41f6bf3.gif" />
+    <Content Include="static\flags\gp.gif" />
+    <Content Include="static\flags\gq.f6b91dcb6580.gif" />
+    <Content Include="static\flags\gq.gif" />
+    <Content Include="static\flags\gr.5e4880cbbd3d.gif" />
+    <Content Include="static\flags\gr.gif" />
+    <Content Include="static\flags\gs.14854be0ccca.gif" />
+    <Content Include="static\flags\gs.gif" />
+    <Content Include="static\flags\gt.c2fb56b9a372.gif" />
+    <Content Include="static\flags\gt.gif" />
+    <Content Include="static\flags\gu.08148a42998f.gif" />
+    <Content Include="static\flags\gu.gif" />
+    <Content Include="static\flags\gw.d4620c7ae92d.gif" />
+    <Content Include="static\flags\gw.gif" />
+    <Content Include="static\flags\gy.6d7613967cc7.gif" />
+    <Content Include="static\flags\gy.gif" />
+    <Content Include="static\flags\hk.245d3b1fae01.gif" />
+    <Content Include="static\flags\hk.gif" />
+    <Content Include="static\flags\hm.0abdbcb7285a.gif" />
+    <Content Include="static\flags\hm.gif" />
+    <Content Include="static\flags\hn.68ed4e79861e.gif" />
+    <Content Include="static\flags\hn.gif" />
+    <Content Include="static\flags\hr.0d96f100f95d.gif" />
+    <Content Include="static\flags\hr.gif" />
+    <Content Include="static\flags\ht.6073f3f4989b.gif" />
+    <Content Include="static\flags\ht.gif" />
+    <Content Include="static\flags\hu.f8e47e2e8d57.gif" />
+    <Content Include="static\flags\hu.gif" />
+    <Content Include="static\flags\id.41d36eb5fe1d.gif" />
+    <Content Include="static\flags\id.gif" />
+    <Content Include="static\flags\ie.e7c492a88776.gif" />
+    <Content Include="static\flags\ie.gif" />
+    <Content Include="static\flags\il.7bd989a25c90.gif" />
+    <Content Include="static\flags\il.gif" />
+    <Content Include="static\flags\im.815ddcc7ed1e.gif" />
+    <Content Include="static\flags\im.gif" />
+    <Content Include="static\flags\in.392d330eeff3.gif" />
+    <Content Include="static\flags\in.gif" />
+    <Content Include="static\flags\io.9d4b7457bd6f.gif" />
+    <Content Include="static\flags\io.gif" />
+    <Content Include="static\flags\iq.ea33c5f18b75.gif" />
+    <Content Include="static\flags\iq.gif" />
+    <Content Include="static\flags\ir.f682966ac7f2.gif" />
+    <Content Include="static\flags\ir.gif" />
+    <Content Include="static\flags\is.fcc9401b56f8.gif" />
+    <Content Include="static\flags\is.gif" />
+    <Content Include="static\flags\it.272f76eb92ac.gif" />
+    <Content Include="static\flags\it.gif" />
+    <Content Include="static\flags\je.efc202196b96.gif" />
+    <Content Include="static\flags\je.gif" />
+    <Content Include="static\flags\jm.d9ff5ffddf36.gif" />
+    <Content Include="static\flags\jm.gif" />
+    <Content Include="static\flags\jo.20503d5b95e8.gif" />
+    <Content Include="static\flags\jo.gif" />
+    <Content Include="static\flags\jp.7ecbbcf894e3.gif" />
+    <Content Include="static\flags\jp.gif" />
+    <Content Include="static\flags\ke.10cbaba0b4e4.gif" />
+    <Content Include="static\flags\ke.gif" />
+    <Content Include="static\flags\kg.ab377e5affbd.gif" />
+    <Content Include="static\flags\kg.gif" />
+    <Content Include="static\flags\kh.099d6feffa4f.gif" />
+    <Content Include="static\flags\kh.gif" />
+    <Content Include="static\flags\ki.5ffcce93d5db.gif" />
+    <Content Include="static\flags\ki.gif" />
+    <Content Include="static\flags\km.50a2866f05d5.gif" />
+    <Content Include="static\flags\km.gif" />
+    <Content Include="static\flags\kn.48e1cc273d63.gif" />
+    <Content Include="static\flags\kn.gif" />
+    <Content Include="static\flags\kp.c0a5e85a3677.gif" />
+    <Content Include="static\flags\kp.gif" />
+    <Content Include="static\flags\kr.471997fb1fbd.gif" />
+    <Content Include="static\flags\kr.gif" />
+    <Content Include="static\flags\kw.25b5a9443882.gif" />
+    <Content Include="static\flags\kw.gif" />
+    <Content Include="static\flags\ky.016d3547d02b.gif" />
+    <Content Include="static\flags\ky.gif" />
+    <Content Include="static\flags\kz.8766a6d19ae3.gif" />
+    <Content Include="static\flags\kz.gif" />
+    <Content Include="static\flags\la.4a3362f438e0.gif" />
+    <Content Include="static\flags\la.gif" />
+    <Content Include="static\flags\lb.9228f190cc65.gif" />
+    <Content Include="static\flags\lb.gif" />
+    <Content Include="static\flags\lc.773e5ac78bf9.gif" />
+    <Content Include="static\flags\lc.gif" />
+    <Content Include="static\flags\li.4afa04f825bd.gif" />
+    <Content Include="static\flags\li.gif" />
+    <Content Include="static\flags\lk.aa4d6ec6a7dd.gif" />
+    <Content Include="static\flags\lk.gif" />
+    <Content Include="static\flags\lr.232c3da38420.gif" />
+    <Content Include="static\flags\lr.gif" />
+    <Content Include="static\flags\ls.137b24d9ee39.gif" />
+    <Content Include="static\flags\ls.gif" />
+    <Content Include="static\flags\lt.0da6d7733502.gif" />
+    <Content Include="static\flags\lt.gif" />
+    <Content Include="static\flags\lu.a74d8a66092d.gif" />
+    <Content Include="static\flags\lu.gif" />
+    <Content Include="static\flags\lv.2ddd68059746.gif" />
+    <Content Include="static\flags\lv.gif" />
+    <Content Include="static\flags\ly.095fb94a74f0.gif" />
+    <Content Include="static\flags\ly.gif" />
+    <Content Include="static\flags\ma.08a8042983a5.gif" />
+    <Content Include="static\flags\ma.gif" />
+    <Content Include="static\flags\mc.b068df268d23.gif" />
+    <Content Include="static\flags\mc.gif" />
+    <Content Include="static\flags\md.db4dff847535.gif" />
+    <Content Include="static\flags\md.gif" />
+    <Content Include="static\flags\me.bd3e333fb409.gif" />
+    <Content Include="static\flags\me.gif" />
+    <Content Include="static\flags\mf.cc38d01b0b77.gif" />
+    <Content Include="static\flags\mf.gif" />
+    <Content Include="static\flags\mg.660bd44b6a51.gif" />
+    <Content Include="static\flags\mg.gif" />
+    <Content Include="static\flags\mh.1349f33431a6.gif" />
+    <Content Include="static\flags\mh.gif" />
+    <Content Include="static\flags\mk.c5719d1148f9.gif" />
+    <Content Include="static\flags\mk.gif" />
+    <Content Include="static\flags\ml.6ce3f88f5249.gif" />
+    <Content Include="static\flags\ml.gif" />
+    <Content Include="static\flags\mm.cd95400d023a.gif" />
+    <Content Include="static\flags\mm.gif" />
+    <Content Include="static\flags\mn.29e7bd3daa12.gif" />
+    <Content Include="static\flags\mn.gif" />
+    <Content Include="static\flags\mo.94cb5d5e8a6e.gif" />
+    <Content Include="static\flags\mo.gif" />
+    <Content Include="static\flags\mp.b99443ad82b2.gif" />
+    <Content Include="static\flags\mp.gif" />
+    <Content Include="static\flags\mq.efbaf0dc0f91.gif" />
+    <Content Include="static\flags\mq.gif" />
+    <Content Include="static\flags\mr.92aecbf5bb87.gif" />
+    <Content Include="static\flags\mr.gif" />
+    <Content Include="static\flags\ms.9f804915aeef.gif" />
+    <Content Include="static\flags\ms.gif" />
+    <Content Include="static\flags\mt.ffacba7d4fd0.gif" />
+    <Content Include="static\flags\mt.gif" />
+    <Content Include="static\flags\mu.24c98b52e2d5.gif" />
+    <Content Include="static\flags\mu.gif" />
+    <Content Include="static\flags\mv.e00bb34355fc.gif" />
+    <Content Include="static\flags\mv.gif" />
+    <Content Include="static\flags\mw.4c77f0826072.gif" />
+    <Content Include="static\flags\mw.gif" />
+    <Content Include="static\flags\mx.2ea63d65755d.gif" />
+    <Content Include="static\flags\mx.gif" />
+    <Content Include="static\flags\my.3f7c82ace547.gif" />
+    <Content Include="static\flags\my.gif" />
+    <Content Include="static\flags\mz.87beb7b0344f.gif" />
+    <Content Include="static\flags\mz.gif" />
+    <Content Include="static\flags\na.bf24d7155fe0.gif" />
+    <Content Include="static\flags\na.gif" />
+    <Content Include="static\flags\nc.0a65acb035b5.gif" />
+    <Content Include="static\flags\nc.gif" />
+    <Content Include="static\flags\ne.6d6eb481a7f8.gif" />
+    <Content Include="static\flags\ne.gif" />
+    <Content Include="static\flags\nf.3b470dffd0ad.gif" />
+    <Content Include="static\flags\nf.gif" />
+    <Content Include="static\flags\ng.8fc7c599d50c.gif" />
+    <Content Include="static\flags\ng.gif" />
+    <Content Include="static\flags\ni.3d1e3a08086d.gif" />
+    <Content Include="static\flags\ni.gif" />
+    <Content Include="static\flags\nl.f486b11fa018.gif" />
+    <Content Include="static\flags\nl.gif" />
+    <Content Include="static\flags\no.64573479a6dd.gif" />
+    <Content Include="static\flags\no.gif" />
+    <Content Include="static\flags\np.41eee5d34c0c.gif" />
+    <Content Include="static\flags\np.gif" />
+    <Content Include="static\flags\nr.dddebee17eff.gif" />
+    <Content Include="static\flags\nr.gif" />
+    <Content Include="static\flags\nu.e1211050c85e.gif" />
+    <Content Include="static\flags\nu.gif" />
+    <Content Include="static\flags\nz.4255f2cd8812.gif" />
+    <Content Include="static\flags\nz.gif" />
+    <Content Include="static\flags\om.04dcfb8171a5.gif" />
+    <Content Include="static\flags\om.gif" />
+    <Content Include="static\flags\pa.69797cf8ed3f.gif" />
+    <Content Include="static\flags\pa.gif" />
+    <Content Include="static\flags\pe.aaa0c189a6dd.gif" />
+    <Content Include="static\flags\pe.gif" />
+    <Content Include="static\flags\pf.5e9f8299ea6f.gif" />
+    <Content Include="static\flags\pf.gif" />
+    <Content Include="static\flags\pg.deae3a7f0bc2.gif" />
+    <Content Include="static\flags\pg.gif" />
+    <Content Include="static\flags\ph.3af3ee6535fb.gif" />
+    <Content Include="static\flags\ph.gif" />
+    <Content Include="static\flags\pk.8a95bcf491e3.gif" />
+    <Content Include="static\flags\pk.gif" />
+    <Content Include="static\flags\pl.6245076262f2.gif" />
+    <Content Include="static\flags\pl.gif" />
+    <Content Include="static\flags\pm.ae18daf5435d.gif" />
+    <Content Include="static\flags\pm.gif" />
+    <Content Include="static\flags\pn.5060b3f5e938.gif" />
+    <Content Include="static\flags\pn.gif" />
+    <Content Include="static\flags\pr.c29086c06818.gif" />
+    <Content Include="static\flags\pr.gif" />
+    <Content Include="static\flags\ps.e0338f25a9a5.gif" />
+    <Content Include="static\flags\ps.gif" />
+    <Content Include="static\flags\pt.4b6e9badf138.gif" />
+    <Content Include="static\flags\pt.gif" />
+    <Content Include="static\flags\pw.6e5bf78dc247.gif" />
+    <Content Include="static\flags\pw.gif" />
+    <Content Include="static\flags\py.d09da9d82428.gif" />
+    <Content Include="static\flags\py.gif" />
+    <Content Include="static\flags\qa.05146056eb5b.gif" />
+    <Content Include="static\flags\qa.gif" />
+    <Content Include="static\flags\re.cc38d01b0b77.gif" />
+    <Content Include="static\flags\re.gif" />
+    <Content Include="static\flags\ro.259cdd2830fb.gif" />
+    <Content Include="static\flags\ro.gif" />
+    <Content Include="static\flags\rs.5adcb14b100e.gif" />
+    <Content Include="static\flags\rs.gif" />
+    <Content Include="static\flags\ru.80bb1aad834b.gif" />
+    <Content Include="static\flags\ru.gif" />
+    <Content Include="static\flags\rw.0238b3b86faf.gif" />
+    <Content Include="static\flags\rw.gif" />
+    <Content Include="static\flags\sa.408682e473d1.gif" />
+    <Content Include="static\flags\sa.gif" />
+    <Content Include="static\flags\sb.8d65fda1a6ec.gif" />
+    <Content Include="static\flags\sb.gif" />
+    <Content Include="static\flags\sc.e12a3dcf77e5.gif" />
+    <Content Include="static\flags\sc.gif" />
+    <Content Include="static\flags\sd.8afa6ab50c28.gif" />
+    <Content Include="static\flags\sd.gif" />
+    <Content Include="static\flags\se.c951ddcf9a70.gif" />
+    <Content Include="static\flags\se.gif" />
+    <Content Include="static\flags\sg.aaf73b65424e.gif" />
+    <Content Include="static\flags\sg.gif" />
+    <Content Include="static\flags\sh.b322d64bb20e.gif" />
+    <Content Include="static\flags\sh.gif" />
+    <Content Include="static\flags\si.a6a0982d349b.gif" />
+    <Content Include="static\flags\si.gif" />
+    <Content Include="static\flags\sj.64573479a6dd.gif" />
+    <Content Include="static\flags\sj.gif" />
+    <Content Include="static\flags\sk.4c2daf827e33.gif" />
+    <Content Include="static\flags\sk.gif" />
+    <Content Include="static\flags\sl.3e17dfb7e63c.gif" />
+    <Content Include="static\flags\sl.gif" />
+    <Content Include="static\flags\sm.3c69009ca2af.gif" />
+    <Content Include="static\flags\sm.gif" />
+    <Content Include="static\flags\sn.fa7ebae212ec.gif" />
+    <Content Include="static\flags\sn.gif" />
+    <Content Include="static\flags\so.1b40a082128c.gif" />
+    <Content Include="static\flags\so.gif" />
+    <Content Include="static\flags\sr.7b28f61567ae.gif" />
+    <Content Include="static\flags\sr.gif" />
+    <Content Include="static\flags\ss.eaef7adaa1ff.gif" />
+    <Content Include="static\flags\ss.gif" />
+    <Content Include="static\flags\st.293906fbd536.gif" />
+    <Content Include="static\flags\st.gif" />
+    <Content Include="static\flags\sv.9d7a1b71f1e6.gif" />
+    <Content Include="static\flags\sv.gif" />
+    <Content Include="static\flags\sx.632b3578570e.gif" />
+    <Content Include="static\flags\sx.gif" />
+    <Content Include="static\flags\sy.f14d29def381.gif" />
+    <Content Include="static\flags\sy.gif" />
+    <Content Include="static\flags\sz.71359f3eae96.gif" />
+    <Content Include="static\flags\sz.gif" />
+    <Content Include="static\flags\tc.7ca5c3658786.gif" />
+    <Content Include="static\flags\tc.gif" />
+    <Content Include="static\flags\td.da71938c1ec4.gif" />
+    <Content Include="static\flags\td.gif" />
+    <Content Include="static\flags\tf.2eb504787312.gif" />
+    <Content Include="static\flags\tf.gif" />
+    <Content Include="static\flags\tg.4a25c19f512b.gif" />
+    <Content Include="static\flags\tg.gif" />
+    <Content Include="static\flags\th.bf34a6344659.gif" />
+    <Content Include="static\flags\th.gif" />
+    <Content Include="static\flags\tj.d700249ce655.gif" />
+    <Content Include="static\flags\tj.gif" />
+    <Content Include="static\flags\tk.99c60c95b3eb.gif" />
+    <Content Include="static\flags\tk.gif" />
+    <Content Include="static\flags\tl.147365e8b9f4.gif" />
+    <Content Include="static\flags\tl.gif" />
+    <Content Include="static\flags\tm.8d00d9654977.gif" />
+    <Content Include="static\flags\tm.gif" />
+    <Content Include="static\flags\tn.7e1d85248807.gif" />
+    <Content Include="static\flags\tn.gif" />
+    <Content Include="static\flags\to.2c4bd91ac73f.gif" />
+    <Content Include="static\flags\to.gif" />
+    <Content Include="static\flags\tr.2f25fd64f154.gif" />
+    <Content Include="static\flags\tr.gif" />
+    <Content Include="static\flags\tt.b26ad23569d4.gif" />
+    <Content Include="static\flags\tt.gif" />
+    <Content Include="static\flags\tv.1a978d01b929.gif" />
+    <Content Include="static\flags\tv.gif" />
+    <Content Include="static\flags\tw.f438b6068579.gif" />
+    <Content Include="static\flags\tw.gif" />
+    <Content Include="static\flags\tz.c786fe60d811.gif" />
+    <Content Include="static\flags\tz.gif" />
+    <Content Include="static\flags\ua.143a027b825f.gif" />
+    <Content Include="static\flags\ua.gif" />
+    <Content Include="static\flags\ug.40760e602152.gif" />
+    <Content Include="static\flags\ug.gif" />
+    <Content Include="static\flags\um.fddfca5cc55b.gif" />
+    <Content Include="static\flags\um.gif" />
+    <Content Include="static\flags\us.fed422127dda.gif" />
+    <Content Include="static\flags\us.gif" />
+    <Content Include="static\flags\uy.df3b862d3828.gif" />
+    <Content Include="static\flags\uy.gif" />
+    <Content Include="static\flags\uz.51d823794c21.gif" />
+    <Content Include="static\flags\uz.gif" />
+    <Content Include="static\flags\va.3c9cd55c869d.gif" />
+    <Content Include="static\flags\va.gif" />
+    <Content Include="static\flags\vc.480d5d422271.gif" />
+    <Content Include="static\flags\vc.gif" />
+    <Content Include="static\flags\ve.9bfe7614a926.gif" />
+    <Content Include="static\flags\ve.gif" />
+    <Content Include="static\flags\vg.30e51c255019.gif" />
+    <Content Include="static\flags\vg.gif" />
+    <Content Include="static\flags\vi.0137fa3fa348.gif" />
+    <Content Include="static\flags\vi.gif" />
+    <Content Include="static\flags\vn.edc00f51f328.gif" />
+    <Content Include="static\flags\vn.gif" />
+    <Content Include="static\flags\vu.3e56145d26e3.gif" />
+    <Content Include="static\flags\vu.gif" />
+    <Content Include="static\flags\wf.c014729503c2.gif" />
+    <Content Include="static\flags\wf.gif" />
+    <Content Include="static\flags\ws.803361b74a92.gif" />
+    <Content Include="static\flags\ws.gif" />
+    <Content Include="static\flags\ye.753025e66179.gif" />
+    <Content Include="static\flags\ye.gif" />
+    <Content Include="static\flags\yt.b6e462029aa4.gif" />
+    <Content Include="static\flags\yt.gif" />
+    <Content Include="static\flags\za.321a6e422423.gif" />
+    <Content Include="static\flags\za.gif" />
+    <Content Include="static\flags\zm.7db3fd90783c.gif" />
+    <Content Include="static\flags\zm.gif" />
+    <Content Include="static\flags\zw.4312bb086ef6.gif" />
+    <Content Include="static\flags\zw.gif" />
+    <Content Include="static\flags\__.66a392f1e58b.gif" />
+    <Content Include="static\flags\__.gif" />
+    <Content Include="static\jobs_form\css\styles.94b1df7808c9.css" />
+    <Content Include="static\jobs_form\css\styles.94b1df7808c9.css.gz" />
+    <Content Include="static\jobs_form\css\styles.css" />
+    <Content Include="static\jobs_form\css\styles.css.gz" />
+    <Content Include="static\jobs_form\images\sachs-logo.105c19542bf8.png" />
+    <Content Include="static\jobs_form\images\sachs-logo.png" />
+    <Content Include="static\staticfiles.json" />
+    <Content Include="templates\jobs_form\apply.html" />
+    <Content Include="templates\jobs_form\base.html" />
+    <Content Include="templates\jobs_form\done.html" />
+    <Content Include="templates\jobs_form\pdf_body.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env\">
+      <Id>{d3cb5127-e818-400a-846b-8b3141c31750}</Id>
+      <BaseInterpreter>{2af0f10d-7135-4994-9156-5d01c9c11b7e}</BaseInterpreter>
+      <Version>3.4</Version>
+      <Description>env (Python 3.4)</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <LibraryPath>Lib\</LibraryPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X86</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

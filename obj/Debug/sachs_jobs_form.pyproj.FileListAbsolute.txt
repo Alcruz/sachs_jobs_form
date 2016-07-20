@@ -1,0 +1,15 @@
+C:\Users\abiez\Source\Repos\sachs_jobs_form\bin\Microsoft.PythonTools.WebRole.dll
+C:\Users\abiez\Source\Repos\sachs_jobs_form\obj\Debug\attach_server.py
+C:\Users\abiez\Source\Repos\sachs_jobs_form\obj\Debug\visualstudio_py_debugger.py
+C:\Users\abiez\Source\Repos\sachs_jobs_form\obj\Debug\visualstudio_py_repl.py
+C:\Users\abiez\Source\Repos\sachs_jobs_form\obj\Debug\visualstudio_py_util.py
+C:\Users\abiez\Source\Repos\sachs_jobs_form\obj\Debug\__init__.py
+C:\Users\abiez\Source\Repos\sachs_jobs_form\obj\Debug\__main__.py
+C:\Users\abiez\Source\Repos\sachs_jobs_form\bin\AzureSetup.cfg
+C:\Users\abiez\Source\Repos\sachs_jobs_form\bin\Microsoft.PythonTools.AzureSetup.exe
+C:\Users\abiez\Source\Repos\sachs_jobs_form\bin\Microsoft.PythonTools.AzureSetup.exe.config
+C:\Users\abiez\Source\Repos\sachs_jobs_form\bin\wfastcgi.py
+C:\Users\abiez\Source\Repos\sachs_jobs_form\obj\Debug\deployment-updated-orig-prefix.txt
+C:\Users\abiez\Source\Repos\sachs_jobs_form\ptvs_virtualenv_proxy.py
+C:\Users\abiez\Source\Repos\sachs_jobs_form\obj\Debug\web.config
+C:\Users\abiez\Source\Repos\sachs_jobs_form\obj\Debug\web.debug.config

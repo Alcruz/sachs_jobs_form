@@ -1,0 +1,9 @@
+C:\Users\abiez\Source\Repos\sachs_jobs_form\bin\Microsoft.PythonTools.WebRole.dll
+C:\Users\abiez\Source\Repos\sachs_jobs_form\bin\AzureSetup.cfg
+C:\Users\abiez\Source\Repos\sachs_jobs_form\bin\Microsoft.PythonTools.AzureSetup.exe
+C:\Users\abiez\Source\Repos\sachs_jobs_form\bin\Microsoft.PythonTools.AzureSetup.exe.config
+C:\Users\abiez\Source\Repos\sachs_jobs_form\bin\wfastcgi.py
+C:\Users\abiez\Source\Repos\sachs_jobs_form\obj\Release\deployment-updated-orig-prefix.txt
+C:\Users\abiez\Source\Repos\sachs_jobs_form\ptvs_virtualenv_proxy.py
+C:\Users\abiez\Source\Repos\sachs_jobs_form\obj\Release\web.config
+C:\Users\abiez\Source\Repos\sachs_jobs_form\obj\Release\web.debug.config
